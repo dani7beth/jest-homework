@@ -35,12 +35,27 @@ export const allNumbersGreaterThanZero = (numberArray) => {
 
 //  return true if one or more items in array are odd
 // someNumbersAreOdd(numberArray) // => true; use some
+export const someNumbersAreOdd = (numberArray) => {
+  // grab odds and see if the size of array is one or larger 
+  let odds = numberArray.filter(number => number%2 !== 0);
+  return odds.length > 0 ? true : false;
+};
 
 //  return array double and even
 // evensOnlyAndDoubleArray(numberArray) // => [4,8]; // use map and filter
+export const evensOnlyAndDoubleArray = (numberArray) => {
+  let evens = numberArray.filter(number => number%2 === 0);
+  return evens.map(number => number * 2);
+};
 
 //  find an item method return 'not found' if not found
 // findItem(numberArray, 1) //=> 1
+export const findItem = (numberArray, number) => {
+  return numberArray.includes(number);
+}
 
 // sort array desc order
 // sortArray(numberArray) //=> [4,3,2,1] *desc*
+export const sortArray = (numberArray) => {
+  return numberArray.sort().reverse();
+};
