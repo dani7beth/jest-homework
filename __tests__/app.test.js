@@ -9,7 +9,12 @@ import {
   someNumbersAreOdd,
   evensOnlyAndDoubleArray,
   findItem,
-  sortArray
+  sortArray,
+  doubleLikes,
+  moreThan100Likes,
+  justArtistMoreThan100Likes,
+  numberOfLikes,
+  findObjByName
 } from '../app'
 
 // hint of look in before_each before_all
@@ -74,3 +79,40 @@ describe('sortArray Test', ()=> {
     expect(sortArray([1,2,3,4])).toEqual([4,3,2,1]);
   });
 });
+
+// BONUS
+let artists = [
+  {name: 'a', likes:100},
+  {name: 'b', likes:99},
+  {name: 'c', likes:101}, 
+]
+
+describe('doubledLikes Test', ()=> {
+  test('doubledLikes should return an array of the likes doubled', ()=>{
+    expect(doubleLikes(artists)).toEqual([200,198,202]);
+  });
+});
+
+describe('moreThan100Likes Test', ()=> {
+  test('moreThan100Likes should return an array of objects whose likes are greater than 100', ()=>{
+    expect(moreThan100Likes(artists)).toEqual([{name: 'c', likes:101}]);
+  });
+});
+
+describe('justArtistMoreThan100Likes Test', ()=>{
+  test('justArtistMoreThan100Likes should return an array of the name of the artists whose likes are greater than 100', ()=>{
+    expect(justArtistMoreThan100Likes(artists)).toEqual(['c']); 
+  });
+});
+
+describe('numberOfLikes Test', ()=> {
+  test('numberOfLikes should return the total of likes summed', ()=>{
+    expect(numberOfLikes(artists)).toEqual(300);
+  });
+});
+
+// describe('findObjByName Test', ()=> {
+//   test('findObjByName should return item method or "not found if not found"', ()=>{
+//     expect(findObjByName(artists, 'a')).toEqual({name: 'a', likes:200});
+//   });
+// });

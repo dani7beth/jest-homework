@@ -59,3 +59,53 @@ export const findItem = (numberArray, number) => {
 export const sortArray = (numberArray) => {
   return numberArray.sort().reverse();
 };
+
+// -----BONUS------
+// ARRAY ITERATOR METHODS ON Objects with name age 
+
+
+
+// // doubles likes of artist
+// doubleLikes(artists)
+// // => [
+// //   {name: 'a', likes:200},
+// //   {name: 'b', likes:198},
+// //   {name: 'c', likes:202},  
+// // ]; 
+export const doubleLikes = (artists) => {
+  return artists.map(artist => artist.likes * 2);
+};
+
+// moreThan100Likes(artists)// =>[ {name: 'c', likes:101} ]; // use filter
+export const moreThan100Likes = (artists) => {
+  return artists.filter(artist => artist.likes > 100);
+}
+
+
+// //  return an array of strings of artist name
+// justArtistMoreThan100Likes(artists) //=> ['c']; // use filter
+export const justArtistMoreThan100Likes = (artists) => {
+  //first filter to grab all that are above 100 then map and get just the names
+  return artists.filter(artist => artist.likes > 100).map(artist => artist.name);
+};
+
+// // get total number of likes fo all artists
+// numberOfLikes(artists) //=> 300; // get all likes
+export const numberOfLikes = (artists) => {
+  return artists.map(artists => artists.likes).reduce((sum, like) => sum + like);
+};
+
+// // find an item method. Returns 'not found' if not found
+// findObjByName(artists, 'a') // => {name: 'a', likes:200}
+// export const findObjByName = (artists, artistName) => {
+//    artists.forEach((artist) => {
+//     if(artist.name === artistName){
+//       return artist;
+//     }else{
+//       return "not found"; 
+//     }
+//   });
+// };
+
+// // returns array of artist sorted by likes
+// sortArtistByName(artists)
